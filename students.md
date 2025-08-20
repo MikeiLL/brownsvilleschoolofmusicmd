@@ -14,4 +14,4 @@ Lessons are generally scheduled on a consistent weekly or bi-weekly cycle. Stude
 
 We suggest that each student dedicate a composition book to tracking assignments, areas of focus and progress.
 
-<figure class="wp-block-image is-resized">![Composition Book Vector](https://brownsvilleschoolofmusic.com/wp-content/uploads/2019/10/Journal.svg)</figure>
+![Composition Book Vector](https://brownsvilleschoolofmusic.com/wp-content/uploads/2019/10/Journal.svg)

@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+button {
+  /* not sure why buttons don't get this by inheritance */
+  font-family: 'Lexend', 'Noto Color Emoji', 'Noto Sans Symbols 2', sans-serif;
+  /* Match the font names with the ones used in command_gui.js */
+  line-height: 1.3;
+}
+
+/* Colors */
+:root {
+  --black: #222;
+  --dark: #444;
+  --white: #eee;
+  --transwhite: #eeeeee77;
+  --grey: #636070;
+  --transgrey: #63607077;
+  --light: #c2c2c2;
+  --lighter: #e2e2e2;
+  --primary: #7786A1;
+  --secondary: #C47A6A;
+  --primary-dark: #1E304C;
+  --secondary-light: #DCC1BD;
+  --red: #90311F;
+}
+
+body {
+  margin: 0;
+  background: var(--secondary-light);
+  color: var(--primary-dark);
+}
+
+figure {
+  max-width: 100%;
+  height: auto;
+}
+
+figure>p {
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  margin: 0.5em auto;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textcenter {
+  text-align: center;
+  max-width: 750px;
+  margin: auto;
+}
+
+img.center {
+  margin: auto;
+  display: block;
+}
+
+a {
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--red);
+}
+
+blockquote {
+  padding: 1em;
+  border: 1px dashed #666;
+  border-radius: 5px;
+  margin: 0.4em;
+}
+
+/*
+ * TYPOGRAPHY
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  width: 100%;
+  text-align: center;
+}
+
+section h1 {
+  font-size: 2em;
+}
+
+footer a,
+header a {
+  color: var(--white);
+  transition: all 0.2s ease-in-out allow-discrete;
+}
+
+footer a:hover,
+header a:hover {
+  color: var(--primary);
+}
+
+main svg,
+img {
+  width: 500px;
+  height: auto;
+  max-width: 80vw;
+  display: block;
+  margin: auto;
+}
+
+main {
+  padding: 1em;
+}
+
+/* Add an indicator after external links that'll open in a new window. */
+/* source: https://gist.github.com/miguelmota/322c89234d60de578f37d3c6d30f7e41?permalink_comment_id=5519791#gistcomment-5519791 */
+a[target="_blank"]::after {
+  /* &nearr;, but nicer. SVG adapted from Inter's rendition of "↗". */
+  content: url("data:image/svg+xml,%3Csvg viewBox='0 0 7 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.04261 6.80966L0.377841 6.14489L5.32102 1.19318H1.50284L1.51136 0.272727H6.90625V5.67614H5.97727L5.9858 1.85795L1.04261 6.80966Z' fill='var(--primary-dark)'/%3E%3C/svg%3E%0A");
+  /* inline => inline-block, so that we can give it a height */
+  display: inline-block;
+  height: 0.5em;
+  padding-inline: 0.2em;
+  aspect-ratio: 1;
+  line-height: 1;
+  vertical-align: text-top;
+
+  /* @media (prefers-color-scheme: dark) {
+    filter: invert(100%);
+  } */
+}
+
+
+/* HEADER */
+
+header {
+  background: var(--primary-dark);
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+header>a>svg {
+  stroke: var(--white);
+  fill: var(--white);
+  transition: all 0.5s;
+}
+
+header>a>svg g#glasses {
+  fill: var(--white);
+  transition: all 2s;
+}
+
+header>a:hover>svg {
+  stroke: var(--primary);
+  fill: var(--primary);
+}
+
+header>a:hover>svg g#glasses {
+  fill: var(--primary);
+}
+
+/* Nav */
+
+.menuItem {
+  display: block;
+  margin: 1rem 4rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.menuItem:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 1100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  color: var(--white);
+}
+
+.hamburger span {
+  display: none;
+}
+
+.hamburger svg line {
+  stroke: var(--white);
+}
+
+.hamburger svg line:nth-of-type(1),
+.hamburger svg line:nth-of-type(2),
+.hamburger svg line:nth-of-type(3) {
+  opacity: 1;
+}
+
+header>input:checked~.hamburger svg line:nth-of-type(1),
+header>input:checked~.hamburger svg line:nth-of-type(2),
+header>input:checked~.hamburger svg line:nth-of-type(3) {
+  opacity: 0;
+}
+
+.hamburger svg line:nth-of-type(4),
+.hamburger svg line:nth-of-type(5) {
+  opacity: 0;
+}
+
+header>input:checked~.hamburger svg line:nth-of-type(4),
+header>input:checked~.hamburger svg line:nth-of-type(5) {
+  opacity: 1;
+}
+
+.hamburger svg line {
+  transition: all 0.5s linear;
+}
+
+header>input:checked~.hamburger svg line:nth-of-type(2) {
+  stroke: none;
+}
+
+.menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: all 0.2s;
+  top: -20px;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: var(--primary-dark);
+  color: var(--white);
+  list-style: none;
+  padding-top: 4rem;
+  z-index: 1000;
+  font-weight: 400;
+  font-style: normal;
+  visibility: hidden;
+  max-height: calc(100vh + 20px);
+  overflow-y: auto;
+}
+
+header input:checked~nav ul {
+  transform: translateY(0);
+  visibility: visible;
+  border-bottom: 4px solid var(--secondary-light)
+}
+
+nav {
+  width: 100%;
+}
+
+section {
+  width: 800px;
+  margin: auto;
+  max-width: 90vw;
+}
+
+section>div {
+  display: flex;
+  flex-direction: column;
+}
+
+section>div>svg {
+  width: 500px;
+  margin: auto;
+  max-width: 80vw;
+}
+
+/**
+ * SOCIAL NAV
+ */
+nav#social {
+  position: absolute;
+  right: 1em;
+  bottom: 10px;
+  display: flex;
+  gap: 1em;
+  border: 1px dotted var(--transwhite);
+  padding: 0.2em;
+  justify-content: flex-end;
+  width: fit-content;
+}
+
+nav#social a {
+  width: 30px;
+  height: 30px;
+  color: var(--white);
+  border-radius: 4px;
+  padding: 0.1em;
+}
+
+nav#social a svg {
+  border: none;
+}
+
+nav#social a:hover {
+  background-color: var(--grey);
+}
+
+/**
+* FOOTER
+*/
+
+footer a {
+  text-decoration: none;
+}
+
+footer a svg {
+  width: 1.5em;
+  height: auto;
+  vertical-align: middle;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  border-top: 1px solid var(--black);
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 1em;
+}
+
+
+footer p {
+  text-align: center;
+  padding: 1em;
+  font-weight: bold;
+  max-width: 80vw;
+}
+
+@media screen and (min-width:768px) {
+  /* Nav */
+
+  .menuItem {
+    display: inline-block;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin: 0;
+  }
+
+  /*   .menuItem.secondary {
+    background-color: var(--grey);
+    padding: 0.2em 1em;
+    font-size: smaller;
+  } */
+
+  .menuItem:hover {
+    text-decoration: underline;
+  }
+
+  /*   .menuItem.secondary:hover {
+    background-color: var(--white);
+    padding: 0.2em 1em;
+    font-size: smaller;
+    color: var(--grey);
+  } */
+
+  .hamburger {
+    display: none;
+  }
+
+  .menu {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em 1em;
+    transform: unset;
+    visibility: visible;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0.4em;
+  }
+
+  .menu li {
+    width: calc(20% - 1em);
+    text-align: center;
+  }
+
+  section>div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  section>div:nth-of-type(odd) {
+    flex-direction: row;
+  }
+
+  section>div:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+
+  section>div>* {
+    flex: 2 2 auto;
+  }
+
+  section>div>svg {
+    flex: 1 1 auto;
+  }
+}
