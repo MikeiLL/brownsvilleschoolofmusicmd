@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>{{ page.title | default:"Brownsville School of Music. Mike Kilmer. Pensacola, Florida. Gulf Coast." }}</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="TITLE" content="Brownsville School of Music. Mike Kilmer. Pensacola, Florida. Gulf Coast.">
+  <meta name="DESCRIPTION" content="Official site for Brownsville School of Music">
+  <meta name="KEYWORDS" content="Brownsville School of Music. Mike Kilmer. Pensacola, Florida. Gulf Coast.">
+  <meta name="OWNER" content="mike@mzoo.org">
+  <meta name="AUTHOR" content="mike@mzoo.org">
+  <meta name="CONTENT-LANGUAGE" content="English">
+  <meta name="VW96.OBJECT TYPE" content="Document">
+  <meta name="RATING" content="General">
+  <meta name="ROBOTS" content="index,follow">
+  <meta name="originpath" content="{{page.path}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/style.css" type="text/css">
+  <script src="/scripts.js" type="module"></script>
+</head>
+
+<body class="{{ page.category | default: " default" }}">
+  <header>
+    <a title="home" href="/index">
+      HOME
+    </a>
+    <input type="checkbox" id="mainnavmenu" style="display:none;">
+    <nav aria-label="main">
+      <ul class="menu">
+        <li>
+          <a class="menuItem" href="/prices">Prices</a>
+        </li>
+        <li>
+          <a class="menuItem" href="/staff">Staff</a>
+        </li>
+        <li>
+          <a class="menuItem" href="/students">Students</a>
+        </li>
+        <li>
+          <a class="menuItem" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <label class="hamburger" for="mainnavmenu">
+      <span>Menu</span>
+      <svg viewBox="0 0 24 24" width=24 height=24 fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="15%" y1="15%" x2="85%" y2="15%" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="15%" y1="50%" x2="85%" y2="50%" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="15%" y1="85%" x2="85%" y2="85%" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="15%" y1="15%" x2="85%" y2="85%" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="85%" y1="15%" x2="15%" y2="85%" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+    </label>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <address>
+      <a href="mailto:mike@mzoo.org" title="email me">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <polyline points="224 56 128 144 32 56" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <path d="M32,56H224a0,0,0,0,1,0,0V192a8,8,0,0,1-8,8H40a8,8,0,0,1-8-8V56A0,0,0,0,1,32,56Z" fill="none"
+            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+          <line x1="110.55" y1="128" x2="34.47" y2="197.74" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <line x1="221.53" y1="197.74" x2="145.45" y2="128" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+        </svg>
+        mike@mzoo.org
+      </a><br>
+      <a href="tel:+1201679-4168">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <path
+            d="M164.39,145.34a8,8,0,0,1,7.59-.69l47.16,21.13a8,8,0,0,1,4.8,8.3A48.33,48.33,0,0,1,176,216,136,136,0,0,1,40,80,48.33,48.33,0,0,1,81.92,32.06a8,8,0,0,1,8.3,4.8l21.13,47.2a8,8,0,0,1-.66,7.53L89.32,117a7.93,7.93,0,0,0-.54,7.81c8.27,16.93,25.77,34.22,42.75,42.41a7.92,7.92,0,0,0,7.83-.59Z"
+            fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+        </svg>
+        +1 201 679-4168
+      </a><br>
+      <a
+        href="https://www.google.com/maps/place/Oak+Park,+IL/@41.8871137,-87.810543,14z/data=!3m1!4b1!4m6!3m5!1s0x880e34ba3f1db787:0xdf588d7dd5d4aea8!8m2!3d41.8799533!4d-87.7795563!16zL20vMHM1Y2c?entry=ttu&g_ep=EgoyMDI1MDgwMy4wIKXMDSoASAFQAw%3D%3D">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+          <rect width="256" height="256" fill="none" />
+          <circle cx="128" cy="104" r="32" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="16" />
+          <path d="M208,104c0,72-80,128-80,128S48,176,48,104a80,80,0,0,1,160,0Z" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+        </svg>
+        Pensacola, Florida
+      </a>
+    </address>
+    <p>&copy; Brownsville School of Music</p>
+    </div>
+  </footer>
+</body>
+
+</html>
