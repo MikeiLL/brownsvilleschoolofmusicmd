@@ -22,9 +22,9 @@ button {
   --transgrey: #63607077;
   --light: #c2c2c2;
   --lighter: #e2e2e2;
-  --primary: #7786A1;
-  --secondary: #C47A6A;
-  --primary-dark: #1E304C;
+  --primary: #ab18ea;
+  --secondary: #a99d16;
+  --primary-dark: #3e0756;
   --secondary-light: #DCC1BD;
   --red: #90311F;
 }
@@ -368,7 +368,18 @@ footer p {
   max-width: 80vw;
 }
 
+div.indexrow {
+  font-size: 1.6em;
+  margin: 1em;
+  flex-grow: 1;
+}
+
 @media screen and (min-width:768px) {
+
+  div.indexrow {
+    display: flex;
+  }
+
   /* Nav */
 
   .menuItem {
