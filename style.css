@@ -371,13 +371,17 @@ footer p {
 div.indexrow {
   font-size: 1.6em;
   margin: 1em;
-  flex-grow: 1;
 }
+
 
 @media screen and (min-width:768px) {
 
   div.indexrow {
     display: flex;
+  }
+
+  div.indexrow>* {
+    width: 50%;
   }
 
   /* Nav */
